@@ -1,7 +1,7 @@
 {
   "name": "EliteV8",
   "short_name": "EliteV8",
-  "description": "EliteV8 is a powerful video platform where users can watch and enjoy high-quality content.",
+  "description": "EliteV8 video platform",
   "start_url": "/EliteV8/",
   "display": "standalone",
   "background_color": "#000000",
