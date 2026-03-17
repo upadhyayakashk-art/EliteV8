@@ -1,13 +1,21 @@
 {
-  "name": "Elite Terminal V8 PRO",
+  "name": "EliteV8",
   "short_name": "EliteV8",
-  "start_url": "/index.html",
+  "description": "EliteV8 is a powerful video platform where users can watch and enjoy high-quality content.",
+  "start_url": "/EliteV8/",
   "display": "standalone",
-  "background_color": "#0f2027",
-  "theme_color": "#0f2027",
-  "orientation": "portrait",
+  "background_color": "#000000",
+  "theme_color": "#000000",
   "icons": [
-    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
-    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" }
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
   ]
 }
