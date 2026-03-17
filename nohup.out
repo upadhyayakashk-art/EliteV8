@@ -1,0 +1,305 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/data/data/com.termux/files/usr/lib/python3.13/http/server.py", line 1341, in <module>
+    test(
+    ~~~~^
+        HandlerClass=handler_class,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        protocol=args.protocol,
+        ^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/data/data/com.termux/files/usr/lib/python3.13/http/server.py", line 1288, in test
+    with ServerClass(addr, HandlerClass) as httpd:
+         ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.13/socketserver.py", line 457, in __init__
+    self.server_bind()
+    ~~~~~~~~~~~~~~~~^^
+  File "/data/data/com.termux/files/usr/lib/python3.13/http/server.py", line 1335, in server_bind
+    return super().server_bind()
+           ~~~~~~~~~~~~~~~~~~~^^
+  File "/data/data/com.termux/files/usr/lib/python3.13/http/server.py", line 140, in server_bind
+    socketserver.TCPServer.server_bind(self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.13/socketserver.py", line 478, in server_bind
+    self.socket.bind(self.server_address)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 98] Address already in use
+::ffff:127.0.0.1 - - [17/Mar/2026 11:51:34] "GET /index.html HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [17/Mar/2026 11:51:37] "GET /sw.js HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [17/Mar/2026 11:51:37] "GET /css/style.css HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [17/Mar/2026 11:51:37] "GET /manifest.json HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [17/Mar/2026 11:51:37] "GET /js/app.js HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [17/Mar/2026 11:51:37] "GET / HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [17/Mar/2026 11:51:37] code 404, message File not found
+::ffff:127.0.0.1 - - [17/Mar/2026 11:51:37] "GET /icons/icon-192.png HTTP/1.1" 404 -
+::ffff:127.0.0.1 - - [17/Mar/2026 11:51:37] code 404, message File not found
+::ffff:127.0.0.1 - - [17/Mar/2026 11:51:37] "GET /icons/icon-512.png HTTP/1.1" 404 -
+----------------------------------------
+Exception occurred during processing of request from ('::ffff:127.0.0.1', 48870, 0, 0)
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/usr/lib/python3.13/http/server.py", line 742, in send_head
+    f = open(path, 'rb')
+FileNotFoundError: [Errno 2] No such file or directory: '/storage/emulated/0/EliteTerminalV8/icons/icon-512.png'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/usr/lib/python3.13/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.13/http/server.py", line 1338, in finish_request
+    self.RequestHandlerClass(request, client_address, self,
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                             directory=args.directory)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.13/http/server.py", line 683, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/data/data/com.termux/files/usr/lib/python3.13/http/server.py", line 447, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/data/data/com.termux/files/usr/lib/python3.13/http/server.py", line 435, in handle_one_request
+    method()
+    ~~~~~~^^
+  File "/data/data/com.termux/files/usr/lib/python3.13/http/server.py", line 687, in do_GET
+    f = self.send_head()
+  File "/data/data/com.termux/files/usr/lib/python3.13/http/server.py", line 744, in send_head
+    self.send_error(HTTPStatus.NOT_FOUND, "File not found")
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.13/http/server.py", line 502, in send_error
+    self.wfile.write(body)
+    ~~~~~~~~~~~~~~~~^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.13/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+    ~~~~~~~~~~~~~~~~~~^^^
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+::ffff:127.0.0.1 - - [17/Mar/2026 11:51:37] code 404, message File not found
+::ffff:127.0.0.1 - - [17/Mar/2026 11:51:37] "GET /favicon.ico HTTP/1.1" 404 -
+::ffff:127.0.0.1 - - [17/Mar/2026 11:54:34] "GET /sw.js HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [17/Mar/2026 11:54:34] "GET /index.html HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [17/Mar/2026 11:54:34] "GET / HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [17/Mar/2026 11:54:34] "GET /manifest.json HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [17/Mar/2026 11:54:34] code 404, message File not found
+::ffff:127.0.0.1 - - [17/Mar/2026 11:54:34] "GET /icons/icon-192.png HTTP/1.1" 404 -
+::ffff:127.0.0.1 - - [17/Mar/2026 11:54:34] "GET /css/style.css HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [17/Mar/2026 11:54:34] code 404, message File not found
+::ffff:127.0.0.1 - - [17/Mar/2026 11:54:34] "GET /icons/icon-512.png HTTP/1.1" 404 -
+::ffff:127.0.0.1 - - [17/Mar/2026 11:54:34] "GET /js/app.js HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [17/Mar/2026 11:55:37] "GET /sw.js HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [17/Mar/2026 11:55:37] "GET / HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [17/Mar/2026 11:55:37] "GET /manifest.json HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [17/Mar/2026 11:55:37] "GET /index.html HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [17/Mar/2026 11:55:37] "GET /css/style.css HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [17/Mar/2026 11:55:37] "GET /js/app.js HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [17/Mar/2026 11:55:37] code 404, message File not found
+::ffff:127.0.0.1 - - [17/Mar/2026 11:55:37] "GET /icons/icon-192.png HTTP/1.1" 404 -
+::ffff:127.0.0.1 - - [17/Mar/2026 11:59:11] "GET /index.html HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [17/Mar/2026 11:59:11] "GET /css/style.css HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [17/Mar/2026 11:59:11] "GET /js/app.js HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [17/Mar/2026 11:59:12] "GET /sw.js HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [17/Mar/2026 11:59:12] "GET / HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [17/Mar/2026 11:59:12] "GET /manifest.json HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [17/Mar/2026 11:59:12] code 404, message File not found
+::ffff:127.0.0.1 - - [17/Mar/2026 11:59:12] "GET /icons/icon-192.png HTTP/1.1" 404 -
+::ffff:127.0.0.1 - - [17/Mar/2026 11:59:12] code 404, message File not found
+::ffff:127.0.0.1 - - [17/Mar/2026 11:59:12] "GET /icons/icon-512.png HTTP/1.1" 404 -
+::ffff:127.0.0.1 - - [17/Mar/2026 11:59:16] code 404, message File not found
+::ffff:127.0.0.1 - - [17/Mar/2026 11:59:16] "GET /icons/icon-192.png HTTP/1.1" 404 -
+::ffff:127.0.0.1 - - [17/Mar/2026 11:59:16] code 404, message File not found
+::ffff:127.0.0.1 - - [17/Mar/2026 11:59:16] "GET /icons/icon-192.png HTTP/1.1" 404 -
+::ffff:127.0.0.1 - - [17/Mar/2026 12:04:31] "GET /index.html HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [17/Mar/2026 12:04:31] "GET /css/style.css HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [17/Mar/2026 12:04:31] "GET /js/app.js HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [17/Mar/2026 12:04:32] "GET /sw.js HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [17/Mar/2026 12:04:32] "GET / HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [17/Mar/2026 12:04:32] "GET /manifest.json HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [17/Mar/2026 12:04:32] "GET /js/app.js HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [17/Mar/2026 12:04:32] code 404, message File not found
+::ffff:127.0.0.1 - - [17/Mar/2026 12:04:32] "GET /icons/icon-192.png HTTP/1.1" 404 -
+::ffff:127.0.0.1 - - [17/Mar/2026 12:04:32] code 404, message File not found
+::ffff:127.0.0.1 - - [17/Mar/2026 12:04:32] "GET /icons/icon-512.png HTTP/1.1" 404 -
+----------------------------------------
+Exception occurred during processing of request from ('::ffff:127.0.0.1', 58606, 0, 0)
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/usr/lib/python3.13/http/server.py", line 742, in send_head
+    f = open(path, 'rb')
+FileNotFoundError: [Errno 2] No such file or directory: '/storage/emulated/0/EliteTerminalV8/icons/icon-512.png'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/usr/lib/python3.13/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.13/http/server.py", line 1338, in finish_request
+    self.RequestHandlerClass(request, client_address, self,
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                             directory=args.directory)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.13/http/server.py", line 683, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/data/data/com.termux/files/usr/lib/python3.13/http/server.py", line 447, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/data/data/com.termux/files/usr/lib/python3.13/http/server.py", line 435, in handle_one_request
+    method()
+    ~~~~~~^^
+  File "/data/data/com.termux/files/usr/lib/python3.13/http/server.py", line 687, in do_GET
+    f = self.send_head()
+  File "/data/data/com.termux/files/usr/lib/python3.13/http/server.py", line 744, in send_head
+    self.send_error(HTTPStatus.NOT_FOUND, "File not found")
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.13/http/server.py", line 502, in send_error
+    self.wfile.write(body)
+    ~~~~~~~~~~~~~~~~^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.13/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+    ~~~~~~~~~~~~~~~~~~^^^
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+::ffff:127.0.0.1 - - [17/Mar/2026 12:04:39] "GET /manifest.json HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [17/Mar/2026 12:04:45] "GET /css/style.css HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [17/Mar/2026 12:04:47] "GET /sw.js HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [17/Mar/2026 12:04:47] "GET /manifest.json HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [17/Mar/2026 12:04:47] code 404, message File not found
+::ffff:127.0.0.1 - - [17/Mar/2026 12:04:47] "GET /icons/icon-192.png HTTP/1.1" 404 -
+::ffff:127.0.0.1 - - [17/Mar/2026 12:04:47] code 404, message File not found
+::ffff:127.0.0.1 - - [17/Mar/2026 12:04:47] "GET /icons/icon-512.png HTTP/1.1" 404 -
+----------------------------------------
+Exception occurred during processing of request from ('::ffff:127.0.0.1', 57924, 0, 0)
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/usr/lib/python3.13/http/server.py", line 742, in send_head
+    f = open(path, 'rb')
+FileNotFoundError: [Errno 2] No such file or directory: '/storage/emulated/0/EliteTerminalV8/icons/icon-512.png'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/usr/lib/python3.13/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.13/http/server.py", line 1338, in finish_request
+    self.RequestHandlerClass(request, client_address, self,
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                             directory=args.directory)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.13/http/server.py", line 683, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/data/data/com.termux/files/usr/lib/python3.13/http/server.py", line 447, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/data/data/com.termux/files/usr/lib/python3.13/http/server.py", line 435, in handle_one_request
+    method()
+    ~~~~~~^^
+  File "/data/data/com.termux/files/usr/lib/python3.13/http/server.py", line 687, in do_GET
+    f = self.send_head()
+  File "/data/data/com.termux/files/usr/lib/python3.13/http/server.py", line 744, in send_head
+    self.send_error(HTTPStatus.NOT_FOUND, "File not found")
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.13/http/server.py", line 502, in send_error
+    self.wfile.write(body)
+    ~~~~~~~~~~~~~~~~^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.13/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+    ~~~~~~~~~~~~~~~~~~^^^
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+::ffff:127.0.0.1 - - [17/Mar/2026 12:04:53] "GET /manifest.json HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [17/Mar/2026 12:04:53] code 404, message File not found
+::ffff:127.0.0.1 - - [17/Mar/2026 12:04:53] "GET /icons/icon-192.png HTTP/1.1" 404 -
+::ffff:127.0.0.1 - - [17/Mar/2026 12:08:55] "GET /index.html HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [17/Mar/2026 12:08:55] "GET /css/style.css HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [17/Mar/2026 12:08:55] "GET /js/app.js HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [17/Mar/2026 12:08:56] "GET /sw.js HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [17/Mar/2026 12:08:56] "GET / HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [17/Mar/2026 12:08:56] "GET /manifest.json HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [17/Mar/2026 12:08:56] "GET /icons/icon-512.png HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [17/Mar/2026 12:08:56] "GET /icons/icon-192.png HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [17/Mar/2026 12:09:37] "GET /index.html HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [17/Mar/2026 12:09:40] "GET /sw.js HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [17/Mar/2026 12:11:46] "GET /index.html HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [17/Mar/2026 12:11:50] "GET /sw.js HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [17/Mar/2026 12:13:34] "GET /sw.js HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [17/Mar/2026 12:13:48] "GET /sw.js HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [17/Mar/2026 12:14:51] "GET /sw.js HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [17/Mar/2026 12:17:32] "GET /sw.js HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [17/Mar/2026 12:23:08] "GET /sw.js HTTP/1.1" 200 -
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/data/data/com.termux/files/usr/lib/python3.13/http/server.py", line 1341, in <module>
+    test(
+    ~~~~^
+        HandlerClass=handler_class,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        protocol=args.protocol,
+        ^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/data/data/com.termux/files/usr/lib/python3.13/http/server.py", line 1288, in test
+    with ServerClass(addr, HandlerClass) as httpd:
+         ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.13/socketserver.py", line 457, in __init__
+    self.server_bind()
+    ~~~~~~~~~~~~~~~~^^
+  File "/data/data/com.termux/files/usr/lib/python3.13/http/server.py", line 1335, in server_bind
+    return super().server_bind()
+           ~~~~~~~~~~~~~~~~~~~^^
+  File "/data/data/com.termux/files/usr/lib/python3.13/http/server.py", line 140, in server_bind
+    socketserver.TCPServer.server_bind(self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/data/data/com.termux/files/usr/lib/python3.13/socketserver.py", line 478, in server_bind
+    self.socket.bind(self.server_address)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 98] Address already in use
+::ffff:127.0.0.1 - - [17/Mar/2026 12:41:04] "GET /sw.js HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [17/Mar/2026 12:41:05] "GET / HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [17/Mar/2026 12:41:05] "GET /css/style.css HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [17/Mar/2026 12:41:05] "GET /js/app.js HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [17/Mar/2026 12:41:07] "GET /manifest.json HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [17/Mar/2026 12:41:10] "GET /sw.js HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [17/Mar/2026 12:43:53] "GET / HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [17/Mar/2026 12:43:53] "GET /css/style.css HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [17/Mar/2026 12:43:53] "GET /js/app.js HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [17/Mar/2026 12:43:55] "GET /manifest.json HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [17/Mar/2026 12:43:57] "GET /sw.js HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [17/Mar/2026 12:47:26] "GET / HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [17/Mar/2026 12:47:26] "GET /css/style.css HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [17/Mar/2026 12:47:26] "GET /js/app.js HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [17/Mar/2026 12:47:29] "GET /manifest.json HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [17/Mar/2026 12:47:31] "GET /sw.js HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [17/Mar/2026 12:49:00] "GET /sw.js HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [17/Mar/2026 12:49:03] "GET /index.html HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [17/Mar/2026 12:49:03] "GET /css/style.css HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [17/Mar/2026 12:49:03] "GET /js/app.js HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [17/Mar/2026 12:49:07] "GET /sw.js HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [17/Mar/2026 12:51:10] "GET / HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [17/Mar/2026 12:51:10] "GET /css/style.css HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [17/Mar/2026 12:51:10] "GET /js/app.js HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [17/Mar/2026 12:51:12] "GET /manifest.json HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [17/Mar/2026 12:51:14] "GET /sw.js HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [17/Mar/2026 13:18:44] "GET / HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [17/Mar/2026 13:18:44] "GET /css/style.css HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [17/Mar/2026 13:18:44] "GET /js/app.js HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [17/Mar/2026 13:18:47] "GET /manifest.json HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [17/Mar/2026 13:18:49] "GET /sw.js HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [17/Mar/2026 13:19:13] "GET / HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [17/Mar/2026 13:19:16] "GET /sw.js HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [17/Mar/2026 13:22:07] "GET /index.html HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [17/Mar/2026 13:22:09] "GET /sw.js HTTP/1.1" 304 -

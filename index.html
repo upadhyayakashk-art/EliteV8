@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elite Terminal V8 PRO</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192.png">
+<meta name="theme-color" content="#0f2027">
+
+<link rel="stylesheet" href="css/style.css">
+<script src="https://s3.tradingview.com/tv.js"></script>
+</head>
+<body>
+
+<div class="header">Elite Terminal V8 PRO</div>
+<div id="animated-bg"></div>
+
+<div class="container">
+
+  <!-- Chart Panel -->
+  <div class="panel" id="chartPanel">
+    <h3>Live Chart</h3>
+    <div class="search">
+      <input id="coinSearch" placeholder="Search coin (BTC, ETH...)" oninput="liveSearch(this.value)">
+      <div id="suggestions"></div>
+    </div>
+    <div id="chart"></div>
+    <div class="intervals">
+      <button onclick="setIntervalChart('5')">5m</button>
+      <button onclick="setIntervalChart('15')">15m</button>
+      <button onclick="setIntervalChart('60')">1H</button>
+      <button onclick="setIntervalChart('240')">4H</button>
+      <button onclick="setIntervalChart('1D')">1D</button>
+    </div>
+  </div>
+
+  <!-- Watchlist moved below chart -->
+  <div class="panel" id="watchlistPanel">
+    <h3>Watchlist</h3>
+    <div id="watchlist"></div>
+  </div>
+
+  <!-- Multi Chart -->
+  <div class="panel" id="multiChartPanel">
+    <h3>Multi Chart Mode</h3>
+    <button onclick="enableMultiChart()">Enable 4 Chart</button>
+    <button onclick="disableMultiChart()">Single Chart</button>
+    <div id="multiCharts" style="display:none;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px">
+      <div id="chart1" style="height:300px"></div>
+      <div id="chart2" style="height:300px"></div>
+      <div id="chart3" style="height:300px"></div>
+      <div id="chart4" style="height:300px"></div>
+    </div>
+  </div>
+
+  <!-- Alerts Panel -->
+  <div class="panel" id="alertPanel">
+    <h3>Price Alerts</h3>
+    <button onclick="addAlert()">Add Alert</button>
+  </div>
+
+  <!-- Global Coins & Heatmap -->
+  <div class="panel" id="scannerPanel">
+    <h3>Global Market & Heatmap</h3>
+    <div id="globalScanner"></div>
+    <div id="heatmap" style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:10px"></div>
+  </div>
+
+</div>
+
+<script src="js/app.js"></script>
+<script>
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('sw.js')
+  .then(()=>console.log('Service Worker Registered'))
+  .catch(err=>console.log('SW failed:',err));
+}
+</script>
+</body>
+</html>
